@@ -10,11 +10,8 @@ function Header(){
                     <Navbar.Brand >Home</Navbar.Brand>
                 </Navbar>
       </header>
-    
+
   );
 }
 
-
-
-
-export default Header;
+export default Header; 
