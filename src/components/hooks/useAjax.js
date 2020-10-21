@@ -7,7 +7,7 @@ function useAjax (){
 
   const [list, setList] = useState([]);
 
-  const addItem = (item) => {
+  const _addItem = (item) => {
     item.due = new Date();
     axios({
         url:todoAPI,
@@ -22,7 +22,8 @@ function useAjax (){
             })
         .catch(console.error);
   };
-  const toggleComplete = id => {
+
+  const _toggleComplete = id => {
 
     let item = list.filter(i => i._id === id)[0] || {};
 
@@ -46,7 +47,8 @@ function useAjax (){
         .catch(console.error);
     }
   };
-  const deleteItem = id =>{
+
+  const _deleteItem = id =>{
 
     let item = list.filter(i => i._id === id)[0] || {};
 
@@ -66,13 +68,13 @@ function useAjax (){
 
   }
 
-  const getTodoItems = () => {
+  const _getTodoItems = () => {
     axios.get(todoAPI)
       .then(response => setList(response.data.result))
       .catch(console.error);
   };
-  return[addItem,toggleComplete,getTodoItems,deleteItem,list];
 
+  return[_addItem,_toggleComplete,_getTodoItems,_deleteItem,list];
 }
 
 export default useAjax;

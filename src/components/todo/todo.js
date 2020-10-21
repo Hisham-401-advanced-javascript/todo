@@ -7,12 +7,10 @@ import Container from 'react-bootstrap/Container';
 import Col from 'react-bootstrap/Col';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
-
 import './todo.scss';
 
 function ToDo() {
   const [todo, setTodo] = useState([]);
-
 
   useEffect(() => {
     let list = [
@@ -30,7 +28,6 @@ function ToDo() {
     item.complete = false;
     setTodo([...todo, item]);
   };
-
 
   const toggleComplete = id => {
 
